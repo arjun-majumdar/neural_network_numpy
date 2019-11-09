@@ -8,10 +8,7 @@ import scipy
 
 
 """
-Neural network with one hidden layer
-
-Refer-
-https://pylessons.com/Neural-network-single-layer-part1/
+Neural network with one hidden layer for binary classification
 """
 
 
@@ -425,20 +422,21 @@ print("y_train = {0} & y_test = {1}\n".format(y_train.shape, y_test.shape))
 # Initialize parameters by specifying number of neurons in each layers-
 
 n_hidden_neurons = 10
+n_input_neurons = X_train.flattened.shape[1]
 
-initialized_params = initialize_parameters(X_train_flattened.shape[1], n_hidden_neurons, 1)
+initialized_params = initialize_parameters(n_input_neurons, n_hidden_neurons, 1)
 # 'initialized_params' is a dict
 
-
+# Train the model for 1000 epochs-
 updated_params, updated_gradients, costs = optimization(wts_bias_parameters = initialized_params,
 	X = X_train_flattened, Y = y_train, num_iterations = 1000,
 	learning_rate = 0.001, print_cost = True)
 
 
-# Make predictions on test set-
+# Make predictions on test set using trained model-
 y_predictions = predict(updated_params, X_test_flattened)
 
-# Make predictions on training set-
+# Make predictions on training set using trained model-
 y_predictions_train = predict(updated_params, X_train_flattened)
 
 # Calculate accuracy of TRAINED neural network on test and train sets-
@@ -454,21 +452,21 @@ print("Test set = {0:.4f} and Train set = {1:.4f}\n".format(accuracy_test, accur
 
 """
 # OPTIONAL: Save trained 'updated_params', 'updated_gradients' and 'costs' as pickled
-# objects-
+# objects for later use-
 import pickle
 
 # Save trained weights and biases-
-with open("/home/arjun/Desktop/trained_wts_bias_4_hidden_neurons.pkl", "wb") as f:
+with open("/path_to_file/trained_wts_bias_4_hidden_neurons.pkl", "wb") as f:
 	pickle.dump(updated_params, f)
 
 
 # Save trained gradients-
-with open("/home/arjun/Desktop/trained_gradients_4_hidden_neurons.pkl", "wb") as f:
+with open("/path_to_file/trained_gradients_4_hidden_neurons.pkl", "wb") as f:
 	pickle.dump(updated_gradients, f)
 
 
 # Save costs-
-with open("/home/arjun/Desktop/costs_4_hidden_neurons.pkl", "wb") as f:
+with open("/path_to_file/costs_4_hidden_neurons.pkl", "wb") as f:
 	pickle.dump(costs, f)
 
 """
