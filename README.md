@@ -6,3 +6,5 @@ Coded completely using numpy (1.17.3) and Python (3.7.4).
 
 The hidden layer uses the following as it's activation function: either hyperbolic tangent function or ReLU function.
 The output layer uses sigmoid activation function for performing binary classification.
+
+"Neural_Networks_Backpropagation_Gradients" PDF file contains the mathematics which is required and used for coding up the neural network
