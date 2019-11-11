@@ -10,9 +10,6 @@ import scipy
 
 """
 Neural network with one hidden layer using TensorFlow 2.0 package
-
-Refer-
-https://pylessons.com/Neural-network-single-layer-part1/
 """
 
 
