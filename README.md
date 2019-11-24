@@ -11,4 +11,5 @@ The output layer uses sigmoid activation function for performing binary classifi
 
 The files:
 1.) "neural_network_one_hidden_layer.py" contains implementation of neural network using 'numpy'
-2.) "neural_network_one_hidden_layer_tensorflow.py" contains implementation of neural network using 'TensorFlow'
+2.) "neural_network_one_hidden_layer_tensorflow.py" contains implementation of neural network using 'TensorFlow 2.0'
+3.) "MNIST_classification_tensorflow_2_hardcoded.py" contains implementation of a neural network for classification of MNIST dataset using a neural network programmed from scratch using TensorFlow 2.0 
